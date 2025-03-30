@@ -6,16 +6,16 @@ on:
 jobs:
   build:
     name: Start Building...
-    runs-on: windows-2022
-    timeout-minutes: 350
+    runs-on: windows-2025
+    timeout-minutes: 317
     
     steps:
-      - name: Downloading Essentials
+      - name: Downloading & Installing Essentials
         run: |
-          Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Connect to LiteManager
+      - name: Show Website
         run: cmd /c show.bat
 
       - name: Time Counter
